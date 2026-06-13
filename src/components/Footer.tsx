@@ -120,9 +120,14 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/25">
-            © 2026 Obsidian Studio. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center sm:items-start gap-1">
+            <p className="text-xs text-white/25">
+              © 2026 Obsidian Studio. All rights reserved.
+            </p>
+            <p className="text-[10px] text-white/40 tracking-wider">
+              Crafted by <span className="gradient-text font-semibold uppercase">Tamash Parmar</span> | Founder - Obsidian
+            </p>
+          </div>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-white/25 hover:text-white/50 transition-colors">
               Privacy Policy

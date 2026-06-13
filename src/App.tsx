@@ -7,6 +7,7 @@ import Portfolio from "./pages/Portfolio";
 import Courses from "./pages/Courses";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import Resources from "./pages/Resources";
 import "./index.css";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/resources" element={<Resources />} />
         </Route>
       </Routes>
     </BrowserRouter>

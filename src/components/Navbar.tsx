@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, X, Menu } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -9,16 +10,49 @@ const NAV_LINKS = [
   { label: "Portfolio", to: "/portfolio" },
   { label: "Courses", to: "/courses" },
   { label: "Blog", to: "/blog" },
+  { label: "Resources", to: "/resources" },
+];
+
+const OFFERS = [
+  "🔥 Limited Time Offer: Save 25% on Brand Identity Design & Video Editing. Code: OBSIDIAN25",
+  "🎓 Learn Creative Skills: Enroll in our UI/UX Masterclass & Video Bootcamp for 20% off. Code: STUDY20",
+  "⚡ Premium Assets Hub: Download templates, presets, and color LUTs for free!"
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const [currentOffer, setCurrentOffer] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentOffer((prev) => (prev + 1) % OFFERS.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-dark/80 backdrop-blur-xl border-b border-white/5">
-        <div className="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4 lg:py-5">
+      <header className="fixed top-0 left-0 right-0 z-40 flex flex-col">
+        {/* Latest Offer Announcement Strip Line Carousel */}
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-red-500 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-widest h-8 overflow-hidden select-none shadow-lg shadow-red-500/5 relative flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentOffer}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="absolute w-full px-6 text-center text-ellipsis overflow-hidden whitespace-nowrap"
+            >
+              {OFFERS[currentOffer]}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Navigation Bar */}
+        <nav className="bg-dark/80 backdrop-blur-xl border-b border-white/5 w-full">
+          <div className="flex items-center justify-between px-6 sm:px-10 lg:px-16 py-4 lg:py-5">
           {/* Logo */}
           <Link
             to="/"
@@ -63,6 +97,7 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+      </header>
 
       {/* Mobile Menu */}
       <div

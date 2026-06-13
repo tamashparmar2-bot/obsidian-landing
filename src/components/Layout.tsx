@@ -14,7 +14,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-dark text-white font-inter">
       <Navbar />
-      <main className="pt-[60px] lg:pt-[68px]">
+      <main className="pt-[92px] lg:pt-[100px]">
         <Outlet />
       </main>
       <Footer />
