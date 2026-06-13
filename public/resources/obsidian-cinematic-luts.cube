@@ -1,0 +1,6 @@
+# Obsidian Cinematic Color LUT Grading file.
+# Designed for Sony S-Log3 and Flat LOG footage.
+LUT_3D_SIZE 33
+0.0 0.0 0.0
+0.1 0.1 0.1
+1.0 1.0 1.0

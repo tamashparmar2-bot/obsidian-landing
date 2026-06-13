@@ -357,11 +357,9 @@ export default function Resources() {
     );
     addToast("success", `Downloading: ${name}`);
 
-    // Create simulated file trigger
+    // Download real file from server public directory
     const element = document.createElement("a");
-    const fileContent = `Simulated asset payload for ${fileName}. Developed and distributed by OBSIDIAN STUDIO.`;
-    const fileBlob = new Blob([fileContent], { type: "text/plain" });
-    element.href = URL.createObjectURL(fileBlob);
+    element.href = `/resources/${fileName}`;
     element.download = fileName;
     document.body.appendChild(element);
     element.click();
@@ -369,8 +367,7 @@ export default function Resources() {
   };
 
   const handleCopyLink = (fileName: string) => {
-    const formatName = encodeURIComponent(fileName.toLowerCase().replace(/ /g, "-"));
-    const downloadUrl = `https://obsidianstudio.com/download/assets/${formatName}`;
+    const downloadUrl = `${window.location.origin}/resources/${fileName}`;
 
     navigator.clipboard
       .writeText(downloadUrl)
