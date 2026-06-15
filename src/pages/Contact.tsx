@@ -13,12 +13,12 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    detail: "hello@obsidianstudio.com",
+    detail: "tamashparmar2@gmail.com",
   },
   {
     icon: Phone,
     title: "Phone",
-    detail: "+91 98765 43210",
+    detail: "+91 97731 35547",
   },
   {
     icon: MapPin,

@@ -271,7 +271,7 @@ function Timeline() {
    ═══════════════════════════════════════════════════════════════════════ */
 function TeamSection() {
   const team = [
-    { name: "Yashrajsinh Parmar", role: "Founder & Creative Director", initials: "YP" },
+    { name: "Tamash Parmar", role: "Founder & Creative Director", initials: "TP" },
     { name: "Arjun Kapoor", role: "Lead Designer", initials: "AK" },
     { name: "Neha Reddy", role: "Video Editor", initials: "NR" },
     { name: "Sahil Mehta", role: "Instructor", initials: "SM" },

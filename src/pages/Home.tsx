@@ -59,14 +59,11 @@ function Hero() {
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
-      {/* background video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* background image */}
+      <img
+        src="/hero-bg.jpg"
+        alt="Obsidian Creative Hero Background"
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260606_154941_df1a96e1-a06f-450c-bd02-d863414cc1a0.mp4"
       />
 
       {/* overlay */}
@@ -216,9 +213,9 @@ function ServicesPreview() {
    ═══════════════════════════════════════════════════════════════════════ */
 function PortfolioPreview() {
   const items = [
-    { img: "/portfolio-design.png", category: "Branding", title: "Visual Identity Systems" },
-    { img: "/portfolio-editing.png", category: "Video", title: "Cinematic Showreels" },
-    { img: "/portfolio-uiux.png", category: "UI / UX", title: "Digital Experiences" },
+    { videoUrl: "/portfolio/cgi-saregama.mp4", category: "CGI & Ad", title: "CGI Saregama Ad" },
+    { videoUrl: "/portfolio/mango-county.mp4", category: "Campaign", title: "Mango County Campaign" },
+    { videoUrl: "/portfolio/obsidian-draft-1.mp4", category: "Brand Film", title: "Obsidian Brand Film" },
   ];
 
   return (
@@ -236,16 +233,30 @@ function PortfolioPreview() {
           >
             <Link
               to="/portfolio"
-              className="block rounded-2xl overflow-hidden relative group aspect-[4/5]"
+              className="block rounded-2xl overflow-hidden relative group aspect-[4/5] bg-zinc-950"
+              onMouseEnter={(e) => {
+                const video = e.currentTarget.querySelector("video");
+                if (video) video.play().catch(() => {});
+              }}
+              onMouseLeave={(e) => {
+                const video = e.currentTarget.querySelector("video");
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0;
+                }
+              }}
             >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              <video
+                src={p.videoUrl}
+                preload="metadata"
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-all duration-300"
               />
               {/* hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <span className="text-xs tracking-widest uppercase text-blue-400 mb-2">
+                <span className="text-xs tracking-widest uppercase text-blue-400 mb-2 font-inter font-semibold">
                   {p.category}
                 </span>
                 <h3 className="text-lg font-bold text-white font-podium">

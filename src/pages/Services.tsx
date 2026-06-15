@@ -22,6 +22,7 @@ const services = [
       "We create stunning brand identities, UI/UX designs, and visual systems that resonate with your audience and elevate your brand presence.",
     features: ["Brand Identity", "UI/UX Design", "Social Media Graphics", "Packaging Design", "Logo Design", "Print Design"],
     gradient: "from-blue-600/20 to-blue-900/10",
+    videoUrl: "/portfolio/v5.mp4"
   },
   {
     icon: Film,
@@ -32,6 +33,7 @@ const services = [
       "Professional video editing, color grading, and motion graphics that transform raw footage into cinematic masterpieces.",
     features: ["Video Editing", "Color Grading", "Motion Graphics", "Sound Design", "VFX", "YouTube Content"],
     gradient: "from-purple-600/20 to-purple-900/10",
+    videoUrl: "/portfolio/obsidian-draft-1.mp4"
   },
   {
     icon: BookOpen,
@@ -42,6 +44,7 @@ const services = [
       "Learn from industry professionals with hands-on courses designed to take your creative skills to the next level.",
     features: ["Live Classes", "Project-Based", "Certificate", "Community Access", "Lifetime Updates", "1-on-1 Mentoring"],
     gradient: "from-red-600/20 to-red-900/10",
+    videoUrl: "/portfolio/mango-county.mp4"
   },
 ];
 
@@ -153,17 +156,19 @@ export default function Services() {
                 </Link>
               </div>
 
-              {/* Visual */}
+              {/* Visual Thumbnail Video */}
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <div className={`glass-card p-1 bg-gradient-to-br ${s.gradient}`}>
-                  <div className="aspect-[4/3] rounded-xl bg-dark-100/80 flex items-center justify-center relative overflow-hidden">
-                    <div
-                      className="absolute inset-0 opacity-20"
-                      style={{
-                        background: `radial-gradient(circle at 30% 40%, ${s.color}40, transparent 60%), radial-gradient(circle at 70% 60%, ${s.color}20, transparent 50%)`,
-                      }}
+                  <div className="aspect-[4/3] rounded-xl bg-zinc-950 flex items-center justify-center relative overflow-hidden">
+                    <video
+                      src={s.videoUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover opacity-70 hover:opacity-90 transition-opacity duration-300"
                     />
-                    <s.icon className="w-20 h-20 opacity-10" style={{ color: s.color }} />
+                    <div className="absolute inset-0 bg-dark/10 pointer-events-none" />
                   </div>
                 </div>
               </div>
