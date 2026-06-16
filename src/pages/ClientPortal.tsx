@@ -284,6 +284,25 @@ export default function ClientPortal() {
     addToast("success", `Project status updated to ${status}!`);
   };
 
+  const handleAcceptOrder = async (id: string) => {
+    // Set status to In Progress and progress to 10%
+    setProjects((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, status: "In Progress", progress: 10 } : p))
+    );
+
+    try {
+      const { error } = await supabase
+        .from("client_portal_projects")
+        .update({ status: "In Progress", progress: 10 })
+        .eq("id", id);
+      if (error) console.error("Database accept order error:", error);
+    } catch (err) {
+      console.error("Database accept order connection failed:", err);
+    }
+
+    addToast("success", "Order accepted! Project status is now In Progress and live online.");
+  };
+
   const handleUpdateProgress = async (id: string, progress: number) => {
     setProjects((prev) =>
       prev.map((p) => (p.id === id ? { ...p, progress } : p))
@@ -345,6 +364,10 @@ export default function ClientPortal() {
 
   // Filtered List
   const filtered = projects.filter((p) => {
+    // Hide Pending Review orders from the public queue if not in Creator Mode
+    if (!isCreatorMode && p.status === "Pending Review") {
+      return false;
+    }
     const matchesSearch =
       p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.clientName.toLowerCase().includes(searchQuery.toLowerCase());
@@ -783,10 +806,22 @@ export default function ClientPortal() {
                               />
                             </div>
 
-                            <div className="flex justify-end mt-1">
+                            <div className="flex justify-between items-center mt-1">
+                              {proj.status === "Pending Review" ? (
+                                <button
+                                  onClick={() => handleAcceptOrder(proj.id)}
+                                  className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold text-emerald-400 hover:text-emerald-300 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 py-1.5 px-4 rounded-lg transition-all"
+                                >
+                                  <CheckCircle2 className="w-3.5 h-3.5" />
+                                  Accept Order
+                                </button>
+                              ) : (
+                                <div />
+                              )}
+                              
                               <button
                                 onClick={() => handleDeleteProject(proj.id)}
-                                className="flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold text-rose-400 hover:text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 py-1 px-3 rounded-lg transition-all"
+                                className="flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold text-rose-400 hover:text-rose-300 bg-rose-500/10 hover:bg-rose-500/20 py-1.5 px-3 rounded-lg transition-all"
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
                                 Cancel Order
