@@ -214,53 +214,101 @@ function MissionVisionValues() {
    4 — TIMELINE
    ═══════════════════════════════════════════════════════════════════════ */
 function Timeline() {
-  const milestones = [
+  const career = [
     { year: "2021", text: "Started Tamashhh with a vision to redefine creative excellence." },
     { year: "2022", text: "Crossed 50+ projects, earning the trust of clients across industries." },
     { year: "2023", text: "Pivoted to Vibe Coding, pioneering live speed-development." },
     { year: "2024", text: "Expanded to full-service creative offerings with design, editing, and engineering." },
   ];
 
+  const education = [
+    { year: "2023", degree: "B.Com Degree", school: "Sardar Patel University (SPU)", desc: "Graduated with a Bachelor of Commerce, building a solid foundation in business operations, economics, and marketing." },
+    { year: "2025", degree: "Animation & VFX Program", school: "Arena Animation", desc: "Completed training in visual effects, motion design, video editing, color theory, and digital asset rendering." },
+    { year: "Present", degree: "MBA Program", school: "CVM University (CVMU)", desc: "Currently pursuing a Master of Business Administration to merge management strategy with creative direction." },
+  ];
+
   return (
     <section className="py-24 px-6 sm:px-10 lg:px-16">
-      <SectionHeader label="MY JOURNEY" title="The timeline" />
-
-      <div className="relative max-w-4xl mx-auto">
-        {/* center line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 -translate-x-1/2 hidden md:block" />
-
-        {milestones.map((m, i) => {
-          const isLeft = i % 2 === 0;
-          return (
-            <motion.div
-              key={m.year}
-              initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative flex md:items-center mb-12 last:mb-0 ${
-                isLeft ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-            >
-              {/* card */}
-              <div
-                className={`glass-card p-6 md:w-[calc(50%-2rem)] ${
-                  isLeft ? "md:mr-auto md:text-right" : "md:ml-auto md:text-left"
-                }`}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        
+        {/* LEFT COLUMN: Career Timeline */}
+        <div>
+          <div className="mb-10 text-left">
+            <span className="text-blue-500 text-xs tracking-[0.3em] uppercase font-inter font-semibold">
+              EXPERIENCE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-podium text-white mt-1">
+              Professional Timeline
+            </h2>
+          </div>
+          
+          <div className="relative border-l border-white/10 pl-6 space-y-8 ml-2">
+            {career.map((m, i) => (
+              <motion.div
+                key={m.year}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative"
               >
-                <span className="text-2xl font-bold gradient-text font-podium">
+                {/* Dot */}
+                <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 border-4 border-zinc-950" />
+                
+                <span className="text-xs uppercase tracking-widest text-blue-400 font-semibold font-mono">
                   {m.year}
                 </span>
-                <p className="text-white/60 text-sm mt-2 leading-relaxed">
+                <p className="text-white/60 text-sm mt-1 leading-relaxed">
                   {m.text}
                 </p>
-              </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-              {/* dot on center line */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-red-500 border-4 border-dark hidden md:block" />
-            </motion.div>
-          );
-        })}
+        {/* RIGHT COLUMN: Education Timeline */}
+        <div>
+          <div className="mb-10 text-left">
+            <span className="text-red-500 text-xs tracking-[0.3em] uppercase font-inter font-semibold">
+              ACADEMICS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-podium text-white mt-1">
+              Education Details
+            </h2>
+          </div>
+
+          <div className="relative border-l border-white/10 pl-6 space-y-8 ml-2">
+            {education.map((edu, i) => (
+              <motion.div
+                key={edu.year}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative"
+              >
+                {/* Dot */}
+                <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-red-500 border-4 border-zinc-950" />
+
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-xs uppercase tracking-widest text-red-400 font-semibold font-mono">
+                    {edu.year}
+                  </span>
+                  <span className="text-[9px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/40 font-mono font-semibold">
+                    {edu.school}
+                  </span>
+                </div>
+                <h4 className="text-white font-bold text-base mt-2">
+                  {edu.degree}
+                </h4>
+                <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                  {edu.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
