@@ -360,7 +360,7 @@ export default function ClientPortal() {
 
   // Queue Analytics
   const activeCount = projects.filter((p) => p.status !== "Completed").length;
-  const completedCount = projects.filter((p) => p.status === "Completed").length;
+  const completedCount = 127 + projects.filter((p) => p.status === "Completed").length;
   const avgProgress =
     projects.length > 0
       ? Math.round(projects.reduce((acc, curr) => acc + curr.progress, 0) / projects.length)
