@@ -278,61 +278,80 @@ function TeamSection() {
         subtitle="The designer, editor, and educator behind every pixel and frame."
       />
 
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* LEFT: Portrait Image with premium border frame */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="glass-card p-10 sm:p-12 text-center group relative overflow-hidden"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="lg:col-span-5 flex justify-center"
         >
-          {/* Decorative background glow */}
-          <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-blue-500/10 blur-2xl pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-500" />
-          <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-red-500/10 blur-2xl pointer-events-none group-hover:bg-red-500/20 transition-colors duration-500" />
-
-          {/* Avatar */}
-          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 flex items-center justify-center mx-auto mb-6 transition-transform duration-500 group-hover:scale-105 shadow-xl shadow-purple-500/10">
-            <span className="text-3xl font-bold text-white font-podium">
-              TP
-            </span>
+          <div className="relative group w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-purple-500/5 transition-transform duration-500 hover:scale-[1.02] hover:border-white/20">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500 -z-10" />
+            
+            <img
+              src="/creator-profile.jpg"
+              alt="Tamash Parmar Portrait"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
           </div>
+        </motion.div>
 
-          <h3 className="text-white font-bold font-podium text-2xl">
-            Tamash Parmar
-          </h3>
-          <p className="text-blue-400 text-xs tracking-widest uppercase font-semibold mt-2 mb-6">
-            Founder & Solo Creator
-          </p>
+        {/* RIGHT: Bio & Social Info Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="lg:col-span-7"
+        >
+          <div className="glass-card p-8 sm:p-10 relative overflow-hidden h-full flex flex-col justify-center">
+            {/* Decorative background glow */}
+            <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-blue-500/5 blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-red-500/5 blur-2xl pointer-events-none" />
 
-          <p className="text-white/60 text-sm leading-relaxed max-w-lg mx-auto mb-8">
-            Hi! I&rsquo;m Tamash, a multi-disciplinary creator specializing in brand identity design, high-end video editing, and motion graphics. With years of experience working with global clients, I help businesses elevate their aesthetics and tell stories that resonate. I also run online bootcamps and share creative resources to empower the next generation of designers and editors.
-          </p>
+            <span className="text-blue-400 text-xs tracking-widest uppercase font-semibold mb-2 block">
+              Founder & Solo Creator
+            </span>
+            <h3 className="text-white font-bold font-podium text-3xl sm:text-4xl mb-4">
+              Tamash Parmar
+            </h3>
+            
+            <p className="text-white/60 text-sm leading-relaxed mb-6">
+              Hi! I&rsquo;m Tamash, a multi-disciplinary creator specializing in brand identity design, high-end video editing, and motion graphics. With years of experience working with global clients, I help businesses elevate their aesthetics and tell stories that resonate. I also run online bootcamps and share creative resources to empower the next generation of designers and editors.
+            </p>
 
-          {/* social icons */}
-          <div className="flex justify-center gap-4">
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
-              aria-label="Twitter"
-            >
-              <IconTwitterX className="w-4 h-4 text-white/60 group-hover:text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
-              aria-label="LinkedIn"
-            >
-              <IconLinkedin className="w-4 h-4 text-white/60 group-hover:text-white" />
-            </a>
-            <a
-              href="https://instagram.com/shy_yshrj"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
-              aria-label="Instagram"
-            >
-              <IconInstagram className="w-4 h-4 text-white/60 group-hover:text-white" />
-            </a>
+            <div className="gradient-line my-6 opacity-30" />
+
+            {/* Social Icons row */}
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
+                aria-label="Twitter"
+              >
+                <IconTwitterX className="w-4 h-4 text-white/60 group-hover:text-white" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
+                aria-label="LinkedIn"
+              >
+                <IconLinkedin className="w-4 h-4 text-white/60 group-hover:text-white" />
+              </a>
+              <a
+                href="https://instagram.com/shy_yshrj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 border border-white/10 group"
+                aria-label="Instagram"
+              >
+                <IconInstagram className="w-4 h-4 text-white/60 group-hover:text-white" />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>
