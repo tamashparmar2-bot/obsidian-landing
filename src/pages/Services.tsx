@@ -44,7 +44,7 @@ const services = [
       "Learn from industry professionals with hands-on courses designed to take your creative skills to the next level.",
     features: ["Live Classes", "Project-Based", "Certificate", "Community Access", "Lifetime Updates", "1-on-1 Mentoring"],
     gradient: "from-red-600/20 to-red-900/10",
-    videoUrl: "/portfolio/mango-county.mp4"
+    videoUrl: "/portfolio/mango-reel.mp4"
   },
 ];
 

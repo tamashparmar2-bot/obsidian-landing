@@ -214,7 +214,7 @@ function ServicesPreview() {
 function PortfolioPreview() {
   const items = [
     { videoUrl: "/portfolio/cgi-saregama.mp4", category: "CGI & Ad", title: "CGI Saregama Ad" },
-    { videoUrl: "/portfolio/mango-county.mp4", category: "Campaign", title: "Mango County Campaign" },
+    { videoUrl: "/portfolio/tracking.mp4", category: "VFX & Tracking", title: "Tracking VFX Showcase" },
     { videoUrl: "/portfolio/obsidian-draft-1.mp4", category: "Brand Film", title: "Obsidian Brand Film" },
   ];
 

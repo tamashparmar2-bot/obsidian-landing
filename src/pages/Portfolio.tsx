@@ -14,6 +14,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Tracking VFX Showcase",
+    category: "Editing",
+    gradient: "from-blue-600 via-purple-600 to-red-500",
+    videoUrl: "/portfolio/tracking.mp4"
+  },
+  {
     title: "CGI Saregama Ad",
     category: "Editing",
     gradient: "from-red-500 via-pink-500 to-purple-600",
@@ -24,12 +30,6 @@ const projects: Project[] = [
     category: "Editing",
     gradient: "from-blue-600 via-purple-600 to-red-500",
     videoUrl: "/portfolio/obsidian-draft-1.mp4"
-  },
-  {
-    title: "Mango County Campaign",
-    category: "Editing",
-    gradient: "from-amber-500 via-orange-500 to-red-500",
-    videoUrl: "/portfolio/mango-county.mp4"
   },
   {
     title: "Epic Journey Highlight",
