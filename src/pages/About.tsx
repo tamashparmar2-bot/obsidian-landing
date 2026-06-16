@@ -217,8 +217,8 @@ function Timeline() {
   const milestones = [
     { year: "2021", text: "Started Tamashhh with a vision to redefine creative excellence." },
     { year: "2022", text: "Crossed 50+ projects, earning the trust of clients across industries." },
-    { year: "2023", text: "Launched online courses, empowering creators worldwide." },
-    { year: "2024", text: "Expanded to full-service creative offerings with design, editing, and education." },
+    { year: "2023", text: "Pivoted to Vibe Coding, pioneering live speed-development." },
+    { year: "2024", text: "Expanded to full-service creative offerings with design, editing, and engineering." },
   ];
 
   return (

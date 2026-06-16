@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Layers, Film, BookOpen, CheckCircle, ArrowRight } from "lucide-react";
+import { Layers, Film, Code, CheckCircle, ArrowRight } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -36,15 +36,15 @@ const services = [
     videoUrl: "/portfolio/obsidian-draft-1.mp4"
   },
   {
-    icon: BookOpen,
-    title: "Courses",
-    subtitle: "Master your craft",
-    color: "#ef4444",
+    icon: Code,
+    title: "Vibe Coding",
+    subtitle: "Speed-building custom software",
+    color: "#10b981",
     description:
-      "Learn from industry professionals with hands-on courses designed to take your creative skills to the next level.",
-    features: ["Live Classes", "Project-Based", "Certificate", "Community Access", "Lifetime Updates", "1-on-1 Mentoring"],
-    gradient: "from-red-600/20 to-red-900/10",
-    videoUrl: "/portfolio/mango-reel.mp4"
+      "I prototype and build web applications, interactive layouts, and custom scripts live at high velocity, blending design and code seamlessly.",
+    features: ["Rapid Prototyping", "Fullstack Web Apps", "API Integrations", "Interactive UI/UX", "Vite & React Stacks", "Automations"],
+    gradient: "from-emerald-600/20 to-emerald-900/10",
+    videoUrl: "/portfolio/v5.mp4"
   },
 ];
 

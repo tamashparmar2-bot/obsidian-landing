@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Play, X } from "lucide-react";
 
-const categories = ["All", "Design", "Editing", "Courses"];
+const categories = ["All", "Design", "Editing", "Vibe Coding"];
 
 interface Project {
   title: string;
@@ -70,9 +70,9 @@ const projects: Project[] = [
     gradient: "from-red-600 to-red-400"
   },
   {
-    title: "Social Media Mastery",
-    category: "Courses",
-    gradient: "from-red-500 to-orange-400"
+    title: "Vibe Builder AI",
+    category: "Vibe Coding",
+    gradient: "from-emerald-500 to-teal-400"
   },
   {
     title: "Motion Squad Showreel",

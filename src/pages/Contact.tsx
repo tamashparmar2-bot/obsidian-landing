@@ -34,7 +34,7 @@ const socials = [
   { icon: IconLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
 ];
 
-const services = ["Design", "Editing", "Courses", "Other"];
+const services = ["Design", "Editing", "Vibe Coding", "Other"];
 
 function Toast({
   message,

@@ -27,7 +27,7 @@ interface ResourceFile {
   id: string;
   title: string;
   description: string;
-  category: "design" | "video" | "courses" | "code" | "docs";
+  category: "design" | "video" | "vibe-coding" | "code" | "docs";
   fileName: string;
   fileSize: string;
   fileType: string;
@@ -71,12 +71,12 @@ const DEFAULT_RESOURCES: ResourceFile[] = [
   },
   {
     id: "4",
-    title: "Motion Design Principles E-Book",
-    description: "A comprehensive guide outlining timing, spacing, anticipation, and easing curves for motion designers.",
-    category: "courses",
-    fileName: "motion-design-principles.pdf",
+    title: "Vibe Coding React Starter",
+    description: "High-speed starter template configured for rapid prototyping with pre-configured routes, states, and tailwind animations.",
+    category: "vibe-coding",
+    fileName: "vibe-coding-starter.zip",
     fileSize: "8.4 MB",
-    fileType: "pdf",
+    fileType: "zip",
     downloads: 512,
     createdAt: "2026-05-20",
   },
@@ -141,7 +141,7 @@ export default function Resources() {
   // Upload Form States
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState<"design" | "video" | "courses" | "code" | "docs">("design");
+  const [category, setCategory] = useState<"design" | "video" | "vibe-coding" | "code" | "docs">("design");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
@@ -595,7 +595,7 @@ export default function Resources() {
                     >
                       <option value="design">Design Assets</option>
                       <option value="video">Video Projects</option>
-                      <option value="courses">Course Material</option>
+                      <option value="vibe-coding">Vibe Coding</option>
                       <option value="code">Code Templates</option>
                       <option value="docs">Documents</option>
                     </select>
@@ -757,7 +757,7 @@ export default function Resources() {
                 { id: "all", label: "All Assets" },
                 { id: "design", label: "Design" },
                 { id: "video", label: "Video Projects" },
-                { id: "courses", label: "Courses" },
+                { id: "vibe-coding", label: "Vibe Coding" },
                 { id: "code", label: "Code templates" },
                 { id: "docs", label: "Documents" },
               ].map((pill) => (
@@ -838,7 +838,7 @@ export default function Resources() {
                                 ? "text-blue-400 bg-blue-500/10 border-blue-500/20"
                                 : file.category === "video"
                                 ? "text-purple-400 bg-purple-500/10 border-purple-500/20"
-                                : file.category === "courses"
+                                : file.category === "vibe-coding"
                                 ? "text-red-400 bg-red-500/10 border-red-500/20"
                                 : file.category === "code"
                                 ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
@@ -942,7 +942,7 @@ export default function Resources() {
                                   ? "text-blue-400 bg-blue-500/10 border-blue-500/20"
                                   : file.category === "video"
                                   ? "text-purple-400 bg-purple-500/10 border-purple-500/20"
-                                  : file.category === "courses"
+                                  : file.category === "vibe-coding"
                                   ? "text-red-400 bg-red-500/10 border-red-500/20"
                                   : file.category === "code"
                                   ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"

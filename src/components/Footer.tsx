@@ -8,13 +8,12 @@ const footerLinks = {
     { label: "UI/UX Design", to: "/services" },
     { label: "Video Editing", to: "/services" },
     { label: "Motion Graphics", to: "/services" },
-    { label: "Online Courses", to: "/courses" },
+    { label: "Vibe Coding", to: "/services" },
   ],
   quickLinks: [
     { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
     { label: "Blog", to: "/blog" },
-    { label: "Courses", to: "/courses" },
     { label: "Contact", to: "/contact" },
   ],
 };

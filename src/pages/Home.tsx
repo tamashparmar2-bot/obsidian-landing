@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Crown, ArrowUpRight, Layers, Film, BookOpen, Quote, Star } from "lucide-react";
+import { Crown, ArrowUpRight, Layers, Film, Code, Quote, Star } from "lucide-react";
 
 /* ──────────────────────── animation variants ──────────────────────── */
 const fadeUp = {
@@ -155,10 +155,10 @@ function ServicesPreview() {
       desc: "Cinematic video editing, motion graphics, and post-production that captivates audiences.",
     },
     {
-      Icon: BookOpen,
-      color: "#ef4444",
-      title: "Courses",
-      desc: "Industry-leading courses to sharpen your creative skills and elevate your craft.",
+      Icon: Code,
+      color: "#10b981",
+      title: "Vibe Coding",
+      desc: "Building software, interactive web apps, and creative tools at high speed and zero friction.",
     },
   ];
 
