@@ -63,7 +63,7 @@ function Hero() {
       <img
         src="/hero-bg.jpg"
         alt="Tamashhh Creative Hero Background"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
       />
 
       {/* overlay */}
