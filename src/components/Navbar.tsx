@@ -56,9 +56,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="font-podium text-2xl sm:text-3xl font-bold uppercase tracking-wider text-white"
+            className="flex items-center"
           >
-            TAMASHHH
+            <img src="/favicon.png" alt="TAMASHHH Logo" className="h-8 w-auto object-contain" />
           </Link>
 
           {/* Desktop Links */}
@@ -106,9 +106,9 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between px-6 sm:px-10 py-4">
-          <span className="font-podium text-2xl font-bold uppercase tracking-wider text-white">
-            TAMASHHH
-          </span>
+          <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center">
+            <img src="/favicon.png" alt="TAMASHHH Logo" className="h-8 w-auto object-contain" />
+          </Link>
           <button onClick={() => setMenuOpen(false)} className="text-white" aria-label="Close menu">
             <X className="w-7 h-7" />
           </button>
